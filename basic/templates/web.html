@@ -1,0 +1,37 @@
+{% extends "all.html" %}
+{% block start %}
+
+
+
+<div class="container mt-5">
+    <h1 class="text-center mb-4">Product Detailer</h1>
+    <form method="POST" class="border p-4 shadow rounded bg-light">
+        {% csrf_token %}
+        <div class="mb-3">
+            <label for="website" class="form-label">Select Website:</label>
+            <select class="form-select" name="website" id="website" required>
+                <option selected disabled>Select a Website</option>
+                <option value="Flipkart">Flipkart</option>
+                <option value="Amazon">Amazon</option>
+            </select>
+        </div>
+
+        <div class="mb-3">
+            <label for="phone" class="form-label">Select Product:</label>
+            <select class="form-select" name="phone" id="phone" required>
+                <option selected disabled>Select a Phone Brand</option>
+                <option value="Iphones">Iphones</option>
+                <option value="Samsung">Samsung</option>
+            </select>
+        </div>
+
+        <div class="mb-3">
+            <label for="pages" class="form-label">Number of Pages of data you want:</label>
+            <input type="number" class="form-control" name="pages" id="pages" min="1" value="1" required>
+        </div>
+
+        <button type="submit" class="btn btn-primary w-100">Submit</button>
+    </form>
+</div>
+
+{% endblock %}
